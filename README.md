@@ -4,7 +4,7 @@
 
 >A local school has decided to put together a flash card application, Flashcard-o-matic, to help their students study online. Teachers will use this application to create decks of flash cards for the subjects that they teach, and students will study the decks. The school needs you to build the application that the students and teachers will use.
 
-![Home page for flashcard application] (https://github.com/the-coding-forester/flashcard-application/blob/main/images/home.png)
+![image](https://user-images.githubusercontent.com/68564461/119990192-0bdd8a80-bf96-11eb-9f6f-170f45e853e5.png)
 
 Bootstrap 4 is included with the starter HTML. You're welcome to use vanilla CSS or Bootstrap 4 for styling your project. However, your finished product doesn't have to match the styles in the provided screenshots, because you won't be assessed on the styling or responsiveness of your project.
 
