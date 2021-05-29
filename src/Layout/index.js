@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import HomePage from "../Home/HomePage";
+import CreateDeckPage from "../Decks/CreateDeckPage";
 
 function Layout() {
   return (
@@ -13,6 +14,9 @@ function Layout() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route>
+            <CreateDeckPage />
           </Route>
           <Route>
             <NotFound />
