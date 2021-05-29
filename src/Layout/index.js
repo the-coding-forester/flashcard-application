@@ -15,8 +15,11 @@ function Layout() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route>
+          <Route path="/decks/new">
             <CreateDeckPage />
+          </Route>
+          <Route path="/decks/:deckId/study">
+            <StudyPage />
           </Route>
           <Route>
             <NotFound />

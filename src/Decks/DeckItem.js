@@ -27,8 +27,8 @@ function DeckItem({ deck, onDeleteDeck }) {
 
       <div className="d-flex justify-content-between">
         <div>
-          <Link to={`/desks/${deck.id}/study`} className="btn btn-primary">Study</Link>
-          <Link to={`/desks/${deck.id}`} className="btn btn-secondary mr-2">View</Link>
+          <Link to={`/decks/${deck.id}/study`} className="btn btn-primary">Study</Link>
+          <Link to={`/decks/${deck.id}`} className="btn btn-secondary mr-2">View</Link>
         </div>
         <div>
           <button onClick={handleDelete} className="btn btn-danger">Delete</button>
