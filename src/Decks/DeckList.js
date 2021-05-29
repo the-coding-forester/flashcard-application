@@ -8,9 +8,9 @@ function DeckList() {
   useEffect(() => {
     listDecks()
       .then((data) => setDecks(data));
-  })
+  }, [])
 
-  async function onDeleteDeck({ deck }) {
+  async function onDeleteDeck(deck) {
     try {
       await deleteDeck(deck.id);
       setDecks(decks.filter((currentDeck) =>
@@ -19,7 +19,6 @@ function DeckList() {
       console.log(err)
     }
   }
-  onDeleteDeck();
 
   return (
     <ul className="list-group my-2">

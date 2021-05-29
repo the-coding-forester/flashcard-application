@@ -9,7 +9,7 @@ function DeckItem({ deck, onDeleteDeck }) {
     if (!doesConfirm) {
       return;
     }
-    onDeleteDeck();
+    onDeleteDeck(deck);
   }
 
   return (
