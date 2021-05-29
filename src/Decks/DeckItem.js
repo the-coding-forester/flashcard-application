@@ -1,20 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { deleteDeck } from "../utils/api";
 
-function DeckItem({ deck onDeleteDeck }) {
+function DeckItem({ deck, onDeleteDeck }) {
   function handleDelete() {
     // display confirm dialog and allow cancel
     const doesConfirm = window.confirm("Are you sure you want to delete?");
     // return early to exit out of function if not confirmed
-    if (!doesConfirm) return;
-    // call the delete API function
-    // if success, delete from state by calling onClickDelete
-    deleteDeck(deck.id)
-      .then(() => {
-        onDeleteDeck(deck.id);
-      })
-      .catch((err) => console.log(err));
+    if (!doesConfirm) {
+      return;
+    }
+    onDeleteDeck();
   }
 
   return (
