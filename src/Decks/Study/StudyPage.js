@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { readDeck } from "../../utils/api";
 import CardDisplay from "./CardDisplay";
+import NotEnoughCards from "./NotEnoughCards";
 
 function StudyPage() {
   const [deck, setDeck] = useState(null);
@@ -33,18 +34,33 @@ function StudyPage() {
     return null;
   }
 
+  function chooseCardDisplay() {
+    if (deck.cards.length > 2) {
+      return (
+        <fieldset>
+          <CardDisplay
+            card={deck.cards[cardIndex]}
+            deckLength={deck.cards.length}
+            cardIndex={cardIndex}
+            onNext={onNext}
+          />
+        </fieldset>
+      )
+    } else {
+      return (
+        <NotEnoughCards
+          deckId={deckId}
+          deckLength={deck.cards.length}
+        />
+      )
+    }
+  }
+
 
   return (
     <div>
       <h2>{deck.name}: Study</h2>
-      <fieldset>
-        <CardDisplay
-          card={deck.cards[cardIndex]}
-          deckLength={deck.cards.length}
-          cardIndex={cardIndex}
-          onNext={onNext}
-        />
-      </fieldset>
+      {chooseCardDisplay()}
     </div>
   )
 }
