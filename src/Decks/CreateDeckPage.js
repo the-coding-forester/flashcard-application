@@ -27,7 +27,7 @@ function CreateDeckPage() {
 
   return (
     <div class="container">
-      <h1>Create Deck</h1>
+      <h2>Create Deck</h2>
       <form class="deck-edit" onSubmit={handleCreateDeck}>
         <fieldset>
           <div class="form-group">

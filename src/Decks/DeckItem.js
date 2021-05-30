@@ -11,6 +11,7 @@ function DeckItem({ deck, onDeleteDeck }) {
     }
     onDeleteDeck(deck);
   }
+  console.log(deck);
 
   return (
     <li className="list-group-item">

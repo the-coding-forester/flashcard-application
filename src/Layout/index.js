@@ -4,6 +4,7 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import HomePage from "../Home/HomePage";
 import CreateDeckPage from "../Decks/CreateDeckPage";
+import StudyPage from "../Decks/Study/StudyPage"
 
 function Layout() {
   return (
