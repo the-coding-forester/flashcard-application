@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
-import { createCard, readDeck } from "../../utils/api";
+import { createCard, readDeck } from "../utils/api";
 
 function AddCardsPage() {
   const history = useHistory();
