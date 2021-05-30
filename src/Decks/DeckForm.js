@@ -16,25 +16,25 @@ function DeckForm({ name, description, onNameChange, onDescriptionChange, onSubm
   }
 
   return (
-    <form class="deck-edit" onSubmit={handleSubmitForm}>
-      <div class="form-group">
-        <label for="name">Name</label>
+    <form className="deck-edit" onSubmit={handleSubmitForm}>
+      <div className="form-group">
+        <label htmlFor="name">Name</label>
         <input
           id="name"
           type="text"
           name="name"
-          class="form-control"
+          className="form-control"
           required
           placeholder="Deck Name"
           onChange={handleNameChange}
           value={name} />
       </div>
-      <div class="form-group">
-        <label for="description">Description</label>
+      <div className="form-group">
+        <label htmlFor="description">Description</label>
         <textarea
           id="description"
           name="description"
-          class="form-control"
+          className="form-control"
           rows="4"
           required
           placeholder="Brief description of the deck"
@@ -44,12 +44,12 @@ function DeckForm({ name, description, onNameChange, onDescriptionChange, onSubm
       </div>
       <button
         type="button"
-        class="btn btn-secondary mr-2"
+        className="btn btn-secondary mr-2"
         onClick={handleClickCancel}
       >
         Cancel
       </button>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">Submit</button>
     </form>
   )
 }

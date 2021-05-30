@@ -7,6 +7,7 @@ import CreateDeckPage from "../Decks/CreateDeckPage";
 import StudyPage from "../Decks/StudyPage/StudyPage"
 import AddCardsPage from "../Decks/AddCardPage";
 import EditDeckPage from "../Decks/EditDeckPage";
+import EditCardPage from "../Decks/EditCardPage";
 
 function Layout() {
   return (
@@ -29,6 +30,9 @@ function Layout() {
           </Route>
           <Route path="/decks/:deckId/cards/new">
             <AddCardsPage />
+          </Route>
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCardPage />
           </Route>
           <Route>
             <NotFound />
