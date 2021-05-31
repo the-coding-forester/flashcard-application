@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function DeckItem({ deck, onDeleteDeck }) {
-  function handleDelete() {
+  const handleDelete = () => {
     // display confirm dialog and allow cancel
     const doesConfirm = window.confirm("Are you sure you want to delete?");
     // return early to exit out of function if not confirmed
@@ -11,7 +11,6 @@ function DeckItem({ deck, onDeleteDeck }) {
     }
     onDeleteDeck(deck);
   }
-  console.log(deck);
 
   return (
     <li className="list-group-item">
