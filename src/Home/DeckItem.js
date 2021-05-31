@@ -13,7 +13,7 @@ function DeckItem({ deck, onDeleteDeck }) {
   }
 
   return (
-    <li className="list-group-item">
+    <li key={`${deck.id}`} className="list-group-item">
       <div className="d-flex justify-content-between">
         <div>
           <h2>{deck.name}</h2>
@@ -27,11 +27,11 @@ function DeckItem({ deck, onDeleteDeck }) {
 
       <div className="d-flex justify-content-between">
         <div>
-          <Link to={`/decks/${deck.id}`} className="btn btn-secondary mr-2"><span class="oi oi-eye"></span> View</Link>
-          <Link to={`/decks/${deck.id}/study`} className="btn btn-primary"><span class="oi oi-book"></span> Study</Link>
+          <Link to={`/decks/${deck.id}`} className="btn btn-secondary mr-2"><span className="oi oi-eye"></span> View</Link>
+          <Link to={`/decks/${deck.id}/study`} className="btn btn-primary"><span className="oi oi-book"></span> Study</Link>
         </div>
         <div>
-          <button onClick={handleDelete} className="btn btn-danger"><span class="oi oi-trash"></span></button>
+          <button onClick={handleDelete} className="btn btn-danger"><span className="oi oi-trash"></span></button>
         </div>
       </div>
     </li>

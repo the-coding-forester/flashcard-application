@@ -12,7 +12,7 @@ function CardItem({ card, onDelete }) {
   }
 
   return (
-    <li className="list-group-item list-group-item-action flex-column align-items-start">
+    <li key={`${card.id}`} className="list-group-item list-group-item-action flex-column align-items-start">
       <div className="row">
         <div className="col-md-10">
           <div className="row">

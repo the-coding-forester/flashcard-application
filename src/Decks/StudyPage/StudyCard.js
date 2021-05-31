@@ -23,7 +23,7 @@ function StudyCard({ deckLength, card, cardIndex, onNext }) {
         <button
           onClick={handleCardFlip}
           type="button"
-          class="btn btn-secondary mr-2">
+          className="btn btn-secondary mr-2">
           Flip
       </button>
         {hasFlipped ?

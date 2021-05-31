@@ -38,7 +38,7 @@ function EditDeckPage() {
 
 
   return (
-    <div class="container">
+    <div className="container">
       <Breadcrumb
         pathArray={pathArray}
       />
