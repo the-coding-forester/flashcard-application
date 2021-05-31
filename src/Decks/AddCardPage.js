@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
+import Breadcrumb from "../Layout/Breadcrumb";
 import { createCard, readDeck } from "../utils/api";
 import CardForm from "./CardForm";
 
@@ -36,8 +37,16 @@ function AddCardsPage() {
     setBack("");
   }
 
+  const pathArray = [
+    { name: `${deck.name}`, link: `decks/${deck.id}` },
+    { name: "Add Card", link: `decks/${deck.id}/cards/new` }
+  ]
+
   return (
     <div className="container">
+      <Breadcrumb
+        pathArray={pathArray}
+      />
       <h2>{deck.name}: Add Card</h2>
       <CardForm
         front={front}

@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router";
 import { readDeck } from "../../utils/api";
 import StudyCard from "./StudyCard"
 import NotEnoughCards from "./NotEnoughCards";
+import Breadcrumb from "../../Layout/Breadcrumb";
 
 function StudyPage() {
   const [deck, setDeck] = useState(null);
@@ -34,6 +35,7 @@ function StudyPage() {
     return null;
   }
 
+
   function chooseCardDisplay() {
     if (deck.cards.length > 2) {
       return (
@@ -56,9 +58,16 @@ function StudyPage() {
     }
   }
 
+  const pathArray = [
+    { name: `${deck.name}`, link: `decks/${deck.id}` },
+    { name: "Study", link: `decks/${deck.id}/study` }
+  ]
 
   return (
     <div>
+      <Breadcrumb
+        pathArray={pathArray}
+      />
       <h1>{deck.name}: Study</h1>
       {chooseCardDisplay()}
     </div>
