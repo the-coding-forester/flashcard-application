@@ -1,21 +1,32 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-function Breadcrumb(pathArray) {
+function Breadcrumb({ pathArray }) {
 
   return (
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb">
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item">
           <Link to="/">Home</Link>
         </li>
-        {pathArray.map((page) => {
-          <li>
-            <Link to={page.b}>{page.a}</Link>
-          </li>
+        {pathArray.map((page, index) => {
+          if (index === pathArray.length - 1) {
+            return (
+              <li className="breadcrumb-item active" aria-current="page">
+                {page.name}
+              </li>
+            )
+          }
+          return (
+            <li className="breadcrumb-item">
+              <Link to={page.link}>{page.name}</Link>
+            </li>
+          )
         })}
       </ol>
     </nav>
 
   )
 }
+
+export default Breadcrumb;
