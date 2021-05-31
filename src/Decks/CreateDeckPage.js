@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Breadcrumb from "../Layout/Breadcrumb";
 import { createDeck } from "../utils/api";
 import DeckForm from './DeckForm';
 
@@ -8,7 +9,6 @@ function CreateDeckPage() {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-
 
   const handleCreateDeck = async () => {
     const newDeck = await createDeck({ name, description });
@@ -23,8 +23,13 @@ function CreateDeckPage() {
     history.push("/");
   }
 
+  const pathArray = [{ name: "Create Deck", link: "/decks/new" }]
+
   return (
     <div className="container">
+      <Breadcrumb
+        pathArray={pathArray}
+      />
       <h1>Create Deck</h1>
 
       <DeckForm
