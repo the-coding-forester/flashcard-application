@@ -7,7 +7,7 @@ function Breadcrumb({ pathArray }) {
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
         <li className="breadcrumb-item">
-          <Link to="/">Home</Link>
+          <Link to="/"><span class="oi oi-home"></span> Home</Link>
         </li>
         {pathArray.map((page, index) => {
           if (index === pathArray.length - 1) {
