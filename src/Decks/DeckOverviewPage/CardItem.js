@@ -8,11 +8,11 @@ function CardItem({ card, onEdit, onDelete }) {
     if (!doesConfirm) {
       return;
     }
-    onDelete();
+    onDelete(card);
   }
 
   const handleEdit = () => {
-    onEdit();
+    onEdit(card);
   }
 
   return (

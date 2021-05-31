@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function CardDisplay({ deckLength, card, cardIndex, onNext }) {
+function StudyCard({ deckLength, card, cardIndex, onNext }) {
   const [hasFlipped, setHasFlipped] = useState(false);
   const [cardFront, setCardFront] = useState(true);
 
@@ -30,4 +30,4 @@ function CardDisplay({ deckLength, card, cardIndex, onNext }) {
   )
 }
 
-export default CardDisplay;
+export default StudyCard;

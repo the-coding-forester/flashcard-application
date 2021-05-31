@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { readDeck } from "../../utils/api";
-import CardDisplay from "./CardDisplay";
+import StudyCard from "./StudyCard"
 import NotEnoughCards from "./NotEnoughCards";
 
 function StudyPage() {
@@ -38,7 +38,7 @@ function StudyPage() {
     if (deck.cards.length > 2) {
       return (
         <fieldset>
-          <CardDisplay
+          <StudyCard
             card={deck.cards[cardIndex]}
             deckLength={deck.cards.length}
             cardIndex={cardIndex}
