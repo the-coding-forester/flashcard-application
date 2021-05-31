@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../../Layout/Breadcrumb";
 import { readDeck, listCards, deleteCard, deleteDeck } from "../../utils/api";
 import CardList from "./CardList";
 
@@ -34,8 +35,13 @@ function DeckOverviewPage() {
       currentCards.id !== card.id));
   }
 
+  const pathArray = [{ name: `${deck.name}`, link: `decks/${deck.id}` }]
+
   return (
     <div className="container">
+      <Breadcrumb
+        pathArray={pathArray}
+      />
       <h2>{deck.name}</h2>
       <p>{deck.description}</p>
       <Link
