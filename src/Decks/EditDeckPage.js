@@ -32,7 +32,7 @@ function EditDeckPage() {
 
   return (
     <div class="container">
-      <h2>Edit Deck</h2>
+      <h1>Edit Deck</h1>
 
       <DeckForm
         name={name}
