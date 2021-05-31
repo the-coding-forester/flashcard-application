@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 
-function CardItem({ card, onEdit, onDelete }) {
+function CardItem({ card, onDelete }) {
 
   const handleDelete = () => {
     const doesConfirm = window.confirm("Are you sure you want to delete?");
@@ -9,10 +9,6 @@ function CardItem({ card, onEdit, onDelete }) {
       return;
     }
     onDelete(card);
-  }
-
-  const handleEdit = () => {
-    onEdit(card);
   }
 
   return (
@@ -30,8 +26,7 @@ function CardItem({ card, onEdit, onDelete }) {
         </div>
         <div className="col text-right">
           <Link
-            to="/decks/1/cards/1/edit"
-            onClick={handleEdit}
+            to={`/decks/${card.deckId}/cards/${card.id}/edit`}
             className="btn btn-secondary mr-2"
             title="Edit Card" >
             <span className="oi oi-pencil" />
