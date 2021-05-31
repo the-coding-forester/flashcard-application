@@ -59,7 +59,7 @@ function StudyPage() {
 
   return (
     <div>
-      <h2>{deck.name}: Study</h2>
+      <h1>{deck.name}: Study</h1>
       {chooseCardDisplay()}
     </div>
   )

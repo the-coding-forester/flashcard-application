@@ -16,16 +16,21 @@ function StudyCard({ deckLength, card, cardIndex, onNext }) {
   }
 
   return (
-    <fieldset>
-      <h5>Card {cardIndex + 1} of {deckLength}</h5>
-      <p>{cardFront ? card.front : card.back}</p>
-      <button onClick={handleCardFlip}>
-        Flip
+    <div className="card front study-card">
+      <div className="card-body">
+        <h5 className="card-title">Card {cardIndex + 1} of {deckLength}</h5>
+        <p className="card-text">{cardFront ? card.front : card.back}</p>
+        <button
+          onClick={handleCardFlip}
+          type="button"
+          class="btn btn-secondary mr-2">
+          Flip
       </button>
-      {hasFlipped ?
-        <button onClick={handleClickNext}>Next</button> :
-        null}
-    </fieldset>
+        {hasFlipped ?
+          <button onClick={handleClickNext}>Next</button> :
+          null}
+      </div>
+    </div>
 
   )
 }
