@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { createDeck } from "../utils/api";
 import DeckForm from './DeckForm';
 
@@ -8,14 +8,13 @@ function CreateDeckPage() {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const { deckId } = useParams();
 
 
   const handleCreateDeck = async () => {
-    await createDeck({ name, description });
+    const newDeck = await createDeck({ name, description });
     setName("");
     setDescription("")
-    history.push(`/decks/${deckId}`);
+    history.push(`/decks/${newDeck.id}`);
   }
 
   const handleCancelDeck = () => {
