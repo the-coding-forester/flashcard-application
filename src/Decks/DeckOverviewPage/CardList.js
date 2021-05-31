@@ -4,7 +4,7 @@ import CardItem from "./CardItem"
 function CardList({ cards, onDeleteCard }) {
 
   return (
-    <ul>
+    <ul className="list-group">
       {cards.map((card) => (
         <CardItem
           key={card.id}

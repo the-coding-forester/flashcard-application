@@ -37,7 +37,7 @@ function DeckOverviewPage() {
   return (
     <div className="container">
       <h2>{deck.name}</h2>
-      <h3>{deck.description}</h3>
+      <p>{deck.description}</p>
       <Link
         to={`/decks/${deck.id}/edit`}
         className="btn btn-secondary mr-2"
@@ -69,11 +69,13 @@ function DeckOverviewPage() {
       >
         <span className="oi oi-trash"></span>
       </button>
-      <h4>Cards</h4>
-      <CardList
-        cards={cards}
-        onDeleteCard={onDeleteCard}
-      />
+      <div className="mt-4 card-list">
+        <h4>Cards</h4>
+        <CardList
+          cards={cards}
+          onDeleteCard={onDeleteCard}
+        />
+      </div>
     </div>
   )
 }
