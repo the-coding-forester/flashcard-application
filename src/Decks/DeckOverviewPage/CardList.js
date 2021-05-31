@@ -1,7 +1,7 @@
 import React from "react"
 import CardItem from "./CardItem"
 
-function CardList({ cards, onEditCard, onDeleteCard }) {
+function CardList({ cards, onDeleteCard }) {
 
   return (
     <ul>
@@ -9,7 +9,6 @@ function CardList({ cards, onEditCard, onDeleteCard }) {
         <CardItem
           key={card.id}
           card={card}
-          onEdit={onEditCard}
           onDelete={onDeleteCard}
         />
       ))}
