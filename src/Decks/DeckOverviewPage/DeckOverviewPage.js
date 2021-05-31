@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { readDeck, listCards, deleteCard } from "../utils/api";
+import { readDeck, listCards, deleteCard, deleteDeck } from "../../utils/api";
 import CardList from "./CardList";
 
 function DeckOverviewPage() {
   const [deck, setDeck] = useState(null);
   const [cards, setCards] = useState([]);
   const { deckId } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
@@ -20,6 +21,11 @@ function DeckOverviewPage() {
 
   if (!deck) {
     return null;
+  }
+
+  const onDeleteDeck = async () => {
+    await deleteDeck(deck.id);
+    history.push("/");
   }
 
   const onDeleteCard = async (card) => {
@@ -38,7 +44,7 @@ function DeckOverviewPage() {
         title="Edit deck"
       >
         <span className="oi oi-pencil"></span>
-      Edit
+        Edit
       </Link>
       <Link
         to={`/decks/${deck.id}/study`}
@@ -59,7 +65,7 @@ function DeckOverviewPage() {
       <button
         className="btn btn-danger float-right"
         title="Delete deck"
-        onClick={onDeleteCard}
+        onClick={onDeleteDeck}
       >
         <span className="oi oi-trash"></span>
       </button>
@@ -67,7 +73,6 @@ function DeckOverviewPage() {
       <CardList
         cards={cards}
         onDeleteCard={onDeleteCard}
-
       />
     </div>
   )
