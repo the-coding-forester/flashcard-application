@@ -25,7 +25,7 @@ function CreateDeckPage() {
 
   return (
     <div className="container">
-      <h2>Create Deck</h2>
+      <h1>Create Deck</h1>
 
       <DeckForm
         name={name}

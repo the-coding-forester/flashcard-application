@@ -16,7 +16,7 @@ function DeckItem({ deck, onDeleteDeck }) {
     <li className="list-group-item">
       <div className="d-flex justify-content-between">
         <div>
-          <h3>{deck.name}</h3>
+          <h2>{deck.name}</h2>
         </div>
         <div>
           <p>{deck.cards.length} cards</p>
