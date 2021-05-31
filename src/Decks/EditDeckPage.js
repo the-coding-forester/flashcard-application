@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router";
+import Breadcrumb from "../Layout/Breadcrumb";
 import { updateDeck, readDeck } from "../utils/api";
 import DeckForm from "./DeckForm";
 
@@ -30,8 +31,17 @@ function EditDeckPage() {
     history.push(`/decks/${deckId}`);
   }
 
+  const pathArray = [
+    { name: `${name}`, link: `decks/${deckId}` },
+    { name: "Edit Deck", link: `decks/${deckId}/edit` }
+  ]
+
+
   return (
     <div class="container">
+      <Breadcrumb
+        pathArray={pathArray}
+      />
       <h1>Edit Deck</h1>
 
       <DeckForm
