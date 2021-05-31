@@ -8,7 +8,7 @@ function HomePage() {
     <div>
       <div className="actions">
         <Link to="/decks/new">
-          <button className="btn btn-secondary">+ Create Deck</button>
+          <button className="btn btn-secondary"><span class="oi oi-plus"></span> Create Deck</button>
         </Link>
       </div>
       <ul className="list-group my-2">
