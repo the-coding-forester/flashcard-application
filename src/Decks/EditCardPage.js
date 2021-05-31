@@ -40,8 +40,8 @@ function EditCardPage() {
 
   return (
     <div className="container">
-      <h2>Edit Card</h2>
-      <h3>{deck.name}: Add Card</h3>
+      <h1>Edit Card</h1>
+      <h2>{deck.name}: Add Card</h2>
       <CardForm
         front={front}
         back={back}
