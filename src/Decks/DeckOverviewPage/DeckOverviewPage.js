@@ -2,21 +2,18 @@ import React, { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../Layout/Breadcrumb";
-import { readDeck, listCards, deleteCard, deleteDeck } from "../../utils/api";
+import { readDeck, deleteCard, deleteDeck } from "../../utils/api";
 import CardList from "./CardList";
 
 function DeckOverviewPage() {
   const [deck, setDeck] = useState(null);
-  const [cards, setCards] = useState([]);
   const { deckId } = useParams();
   const history = useHistory();
 
   useEffect(() => {
     (async () => {
       const localDeck = await readDeck(deckId);
-      const currentDeckCards = await listCards(deckId);
       setDeck(localDeck);
-      setCards(currentDeckCards);
     })()
   }, [deckId])
 
@@ -31,11 +28,14 @@ function DeckOverviewPage() {
 
   const onDeleteCard = async (card) => {
     await deleteCard(card.id);
-    setCards(cards.filter((currentCards) =>
-      currentCards.id !== card.id));
+    setDeck({
+      ...deck,
+      cards: deck.cards.filter((currentCard) => currentCard.id !== card.id)
+    });
   }
 
   const pathArray = [{ name: `${deck.name}`, link: `decks/${deck.id}` }]
+  console.log(deck)
 
   return (
     <div className="container">
@@ -78,7 +78,7 @@ function DeckOverviewPage() {
       <div className="mt-4 card-list">
         <h4>Cards</h4>
         <CardList
-          cards={cards}
+          cards={deck.cards}
           onDeleteCard={onDeleteCard}
         />
       </div>
