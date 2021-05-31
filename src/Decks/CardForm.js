@@ -17,8 +17,8 @@ function CardForm({ front, back, cancelButtonName, onSave, onCancel, onFrontChan
 
 
   return (
-    <form onSubmit={handleClickSave}>
-      <div>
+    <form onSubmit={handleClickSave} className="card-form">
+      <div className="form-group">
         <label htmlFor="front">Front</label>
         <textarea
           id="front"
@@ -30,7 +30,7 @@ function CardForm({ front, back, cancelButtonName, onSave, onCancel, onFrontChan
           onChange={handleFrontChange}
           value={front} />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="back">Back</label>
         <textarea
           id="back"
@@ -42,8 +42,16 @@ function CardForm({ front, back, cancelButtonName, onSave, onCancel, onFrontChan
           onChange={handleBackChange}
           value={back} />
       </div>
-      <button onClick={handleClickCancel}>{cancelButtonName}</button>
-      <button type="submit">Save</button>
+      <button
+        onClick={handleClickCancel}
+        className="btn btn-secondary mr-2"
+      >
+        {cancelButtonName}
+      </button>
+      <button
+        type="submit"
+        className="btn btn-primary"
+      >Save</button>
     </form>
   )
 }
